@@ -71,7 +71,7 @@
 
 .clear-button {
   position: absolute;
-  right: 150px;
+  right: 120px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -130,7 +130,8 @@
 .content-container {
   max-width: 1400px;
   margin: 0 auto;
- }
+  padding: 0 1.5rem 3rem;
+}
 
 .section-title {
   font-size: 1.8rem;
