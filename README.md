@@ -2,7 +2,7 @@
 
 A modern movie discovery application with favorites functionality, built with React and styled with CSS.
 
-![App Screenshot](./public/screenshot.png)
+![App Screenshot](https://github.com/mihirprabhath/Movie_App/blob/debef633dd404dd1f8b8091df068eb61e8a7b9e3/Git.JPG)
 
 ## Features ✨
 
