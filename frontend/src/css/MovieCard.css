@@ -1,0 +1,232 @@
+/* MovieCard.css */
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #ffa3a3;
+  --dark-color: #1a1a2e;
+  --light-color: #f5f5f5;
+  --gold-color: #ffd700;
+  --transition-speed: 0.3s;
+}
+
+.movie-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--dark-color);
+  transition: all var(--transition-speed) ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.movie-poster {
+  position: relative;
+  aspect-ratio: 2/3;
+  width: 100%;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-speed) ease;
+}
+
+.movie-card:hover .movie-poster img {
+  transform: scale(1.05);
+}
+
+.movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 26, 46, 0.9) 20%,
+    rgba(26, 26, 46, 0.2) 60%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(26, 26, 46, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  backdrop-filter: blur(2px);
+  z-index: 2;
+}
+
+.favorite-btn:hover {
+  background-color: rgba(255, 107, 107, 0.8);
+  transform: scale(1.1);
+}
+
+.favorite-btn.active {
+  background-color: rgba(255, 107, 107, 0.9);
+}
+
+.heart-icon {
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.favorite-btn:hover .heart-icon {
+  transform: scale(1.2);
+}
+
+.movie-details {
+  color: var(--light-color);
+  transform: translateY(20px);
+  transition: transform var(--transition-speed) ease;
+  opacity: 0;
+}
+
+.movie-card:hover .movie-details {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.movie-overview {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.movie-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.movie-info {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-color);
+  z-index: 1;
+}
+
+.movie-info h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--light-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.info-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.year {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.rating-badge {
+  background-color: rgba(255, 215, 0, 0.2);
+  color: var(--gold-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.rating-badge::before {
+  content: "⭐";
+  font-size: 0.8rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .movie-card {
+    border-radius: 8px;
+  }
+  
+  .movie-overlay {
+    padding: 1rem;
+  }
+  
+  .movie-info {
+    padding: 1rem;
+  }
+  
+  .movie-info h3 {
+    font-size: 1rem;
+  }
+  
+  .favorite-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .heart-icon {
+    font-size: 1.3rem;
+  }
+  
+  .movie-overview {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-info {
+    padding: 0.8rem;
+  }
+  
+  .info-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+}
