@@ -1,4 +1,4 @@
-# cineMate 🎬
+# CineMate 🎬
 
 A modern movie discovery application with favorites functionality, built with React and styled with CSS.
 
